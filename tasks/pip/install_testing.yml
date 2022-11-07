@@ -1,0 +1,9 @@
+---
+# -t install-pip-testing
+
+- name: Install pubnub-python-tools from testing.pypi
+  ansible.builtin.pip:
+    name: pubnub-python-tools
+    virtualenv: "{{ virtualenv_path }}"
+    extra_args: "-i https://testing.pypi.org/simple"
+    state: forcereinstall

@@ -1,0 +1,12 @@
+---
+# Install pip packages using python
+- name: Install pip using python
+  ansible.builtin.pip:
+    name: pubnub-python-tools
+    virtualenv: "{{ virtualenv_path }}"
+    state: forcereinstall
+
+- name: Template PubNub environment variables
+  ansible.builtin.template:
+    src: templates/env.j2
+    dest: "{{ pubnub_env_path }}"

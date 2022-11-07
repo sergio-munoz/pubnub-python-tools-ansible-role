@@ -1,0 +1,7 @@
+---
+# -t ppt-publish
+
+# - name: Publish a message to a space
+#   ansible.builtin.command: /path/to/script/processing.py {{ N }} {{ bucket_name }}
+#   become: yes
+#   become_user: root

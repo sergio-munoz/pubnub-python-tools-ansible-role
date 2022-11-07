@@ -1,0 +1,9 @@
+---
+# defaults file for pubnub-python-tools-ansible-role
+virtualenv_path: "{{ ansible_env.HOME }}/ppt/venv"
+
+# pubnub_config.yml
+pubnub_env_path: "{{ ansible_env.HOME }}/ppt/.env"
+pubnub_subscribe_key:
+pubnub_publish_key:
+pubnub_user_id:

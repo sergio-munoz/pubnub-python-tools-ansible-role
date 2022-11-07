@@ -1,0 +1,20 @@
+---
+# tasks file for pubnub-python-tools-ansible-role
+- set_fact:
+    command: install
+  tags: ['never', 'install', 'deploy']
+
+- set_fact:
+    command: install-pip
+  tags: ['never', 'install-pip', 'deploy']
+
+- import_tasks: operations.yml
+  tags: ['never', 'install', 'install-pip']
+
+- set_fact:
+    command: ppt
+    operation: subscribe
+  tags: ['never', 'ppt-subscribe']
+
+- import_tasks: ppt_operations.yml
+  tags: ['never', ppt-subscribe]

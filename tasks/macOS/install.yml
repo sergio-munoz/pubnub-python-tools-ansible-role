@@ -1,0 +1,12 @@
+---
+# install requirements in a macOS
+- name: Install Python using Homebrew
+  homebrew:
+    name: python3
+    state: present
+    update_homebrew: yes
+
+- name: Install Python TK using Homebrew
+  homebrew:
+    name: python-tk
+    state: present

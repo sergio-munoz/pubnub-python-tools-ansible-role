@@ -1,0 +1,35 @@
+---
+# Run operations based on conditionals
+
+# MacOS
+- name: Install on OSX type systems
+  import_tasks: macOS/install.yml
+  debug: msg="installing on Macos"
+  when: 
+  - ansible_distribution == 'MacOSX'
+  - command == 'install'
+
+# Debian
+- name: Install on debian type systems
+  debug: msg="tbd installing on debian"
+  sudo: yes
+  sudo_user: ubuntu
+  when: 
+  - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  - command == 'install'
+
+# Arch
+# Debian
+- name: Install on Archlinux type systems
+  debug: msg="i run arch btw"
+  sudo: yes
+  sudo_user: arch
+  when: 
+  - ansible_distribution == 'arch' or ansible_distribution == 'aarm64'
+  - command == 'install'
+
+# All Distributions
+- name: Install pip using python
+  debug: msg="Installing pip and requirements on all distributions"
+  when:
+  - command == 'install'
