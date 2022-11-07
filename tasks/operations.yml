@@ -10,17 +10,14 @@
 
 # Debian
 - name: Install on debian type systems
-  sudo: yes
-  sudo_user: ubuntu
+  shell: "echo ubuntu"
   when: 
   - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
   - command == 'install'
 
 # Arch
-# Debian
 - name: Install on Archlinux type systems
-  sudo: yes
-  sudo_user: arch
+  shell: "echo arch"
   when: 
   - ansible_distribution == 'arch' or ansible_distribution == 'aarm64'
   - command == 'install'
