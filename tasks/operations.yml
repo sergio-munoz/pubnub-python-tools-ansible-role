@@ -10,7 +10,6 @@
 
 # Debian
 - name: Install on debian type systems
-  debug: msg="tbd installing on debian"
   sudo: yes
   sudo_user: ubuntu
   when: 
@@ -20,7 +19,6 @@
 # Arch
 # Debian
 - name: Install on Archlinux type systems
-  debug: msg="i run arch btw"
   sudo: yes
   sudo_user: arch
   when: 
@@ -29,6 +27,5 @@
 
 # All Distributions
 # - name: Install pip using python
-#   debug: msg="Installing pip and requirements on all distributions"
 #   when:
 #   - command == 'install'
