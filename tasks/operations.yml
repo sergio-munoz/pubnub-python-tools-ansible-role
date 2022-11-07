@@ -1,13 +1,12 @@
 ---
 # Run operations based on conditionals
 
-# MacOS
+# MacOS 
 - name: Install on OSX type systems
   import_tasks: macOS/install.yml
-  debug: msg="installing on Macos"
   when: 
   - ansible_distribution == 'MacOSX'
-  - command == 'install'
+  - command == 'install'  # -t install
 
 # Debian
 - name: Install on debian type systems
@@ -29,7 +28,7 @@
   - command == 'install'
 
 # All Distributions
-- name: Install pip using python
-  debug: msg="Installing pip and requirements on all distributions"
-  when:
-  - command == 'install'
+# - name: Install pip using python
+#   debug: msg="Installing pip and requirements on all distributions"
+#   when:
+#   - command == 'install'

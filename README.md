@@ -21,11 +21,20 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yaml
+- name: "Ansible playbook for pubnub-python-tools-ansible-role"
+  hosts: "{{ global_hosts }}"
+  connection: local
+  roles:
+    - role: pubnub-python-tools-ansible-role
+```
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+Example Run
+-----------
+
+```bash
+ansible-playbook playbook.yml -i inventory -t deploy 
+```
 
 License
 -------

@@ -9,7 +9,7 @@
   tags: ['never', 'install-pip', 'deploy']
 
 - import_tasks: operations.yml
-  tags: ['never', 'install', 'install-pip']
+  tags: ['never', 'install', 'install-pip', 'deploy']
 
 - set_fact:
     command: ppt
