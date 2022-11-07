@@ -5,7 +5,7 @@
 - name: Install on OSX type systems
   import_tasks: macOS/install.yml
   when: 
-  - ansible_distribution == 'MacOSX'
+  - ansible_distribution == 'MacOSX' or ansible_distribution == 'darwin'
   - command == 'install'  # -t install
 
 # Debian
