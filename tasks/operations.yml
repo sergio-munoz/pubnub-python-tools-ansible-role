@@ -1,28 +1,24 @@
 ---
 # Run operations based on conditionals
 
-# MacOS 
+# -t install
+# Install MacOS 
 - name: Install on OSX type systems
   import_tasks: macOS/install.yml
-  when: 
-  - ansible_distribution == 'MacOSX' or ansible_distribution == 'arm64'
-  - command == 'install'  # -t install
+  when:
+  - ansible_os_family == 'Darwin'
+  - command == 'install'
 
-# Debian
+# Install Debian
 - name: Install on debian type systems
   shell: "echo ubuntu"
   when: 
   - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
   - command == 'install'
 
-# Arch
+# Install Arch
 - name: Install on Archlinux type systems
   shell: "echo arch"
   when: 
   - ansible_distribution == 'arch' or ansible_distribution == 'aarm64'
   - command == 'install'
-
-# All Distributions
-# - name: Install pip using python
-#   when:
-#   - command == 'install'

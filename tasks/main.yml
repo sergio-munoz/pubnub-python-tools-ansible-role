@@ -4,17 +4,21 @@
     command: install
   tags: ['never', 'install', 'deploy']
 
-- set_fact:
-    command: install-pip
-  tags: ['never', 'install-pip', 'deploy']
-
 - import_tasks: operations.yml
-  tags: ['never', 'install', 'install-pip', 'deploy']
+  tags: ['never', 'install', 'deploy']
+
+- import_tasks: pip/install.yml
+  tags: ['never', 'install-pip', 'deploy']
 
 - set_fact:
     command: ppt
     operation: subscribe
   tags: ['never', 'ppt-subscribe']
 
+- set_fact:
+    command: ppt
+    operation: publish
+  tags: ['never', 'ppt-publish']
+
 - import_tasks: ppt_operations.yml
-  tags: ['never', ppt-subscribe]
+  tags: ['never', 'ppt-subscribe', 'ppt-publish']

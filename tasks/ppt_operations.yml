@@ -1,0 +1,12 @@
+---
+# Run operations based on conditionals
+
+- name: Publish a message using pubnub-python-tools
+  shell: "{{ pubnub_virtualenv_path }}/bin/pubnub-python-tools -p 'ch.test' -m 'Hi from ansible!'"
+  when:
+    - command == 'ppt'
+    - operation == 'publish'
+  register: output
+
+- debug:
+    var: output
