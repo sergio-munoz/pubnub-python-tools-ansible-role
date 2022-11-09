@@ -12,13 +12,7 @@
 
 - set_fact:
     command: ppt
-    operation: subscribe
-  tags: ['never', 'ppt-subscribe']
-
-- set_fact:
-    command: ppt
-    operation: publish
-  tags: ['never', 'ppt-publish']
+  tags: ['never', 'ppt']
 
 - import_tasks: ppt_operations.yml
-  tags: ['never', 'ppt-subscribe', 'ppt-publish']
+  tags: ['never', 'ppt']

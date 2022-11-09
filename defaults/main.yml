@@ -1,9 +1,15 @@
 ---
 # defaults file for pubnub-python-tools-ansible-role
-pubnub_virtualenv_path: "{{ ansible_env.HOME }}/ppt/venv"
-
-# pubnub_config.yml
+# pubnub config
 pubnub_env_path: "{{ ansible_env.HOME }}/ppt/.env"
 pubnub_subscribe_key:
 pubnub_publish_key:
 pubnub_user_id:
+
+# pubnub python venv installation path
+pubnub_virtualenv_path: "{{ ansible_env.HOME }}/ppt/venv"
+
+# pubnub-python-tools commands
+space:            # channel (vsp) to publish
+message_type:     # message type (operation)
+message_content:  # message content
